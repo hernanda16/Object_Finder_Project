@@ -1,3 +1,4 @@
+set -e
 sudo apt update
 sudo apt install -y \
     ros-noetic-tf2-ros \
@@ -10,3 +11,8 @@ sudo apt install -y \
     ros-noetic-amcl \
     ros-noetic-move-base \
     ros-noetic-navigation
+
+git submodule update --init --recursive
+echo "=== Submodules status ==="
+git submodule status
+echo "========= Done =========="
