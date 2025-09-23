@@ -1,0 +1,5 @@
+build/
+devel/
+*.log
+obj_finder/
+robot_diff/

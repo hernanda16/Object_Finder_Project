@@ -1,0 +1,1 @@
+rosrun map_server map_saver -f /home/her/Documents/project/object_finder/src/obj_finder/maps/$(date +%Y%m%d_%H%M%S) map:=/map
