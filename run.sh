@@ -1,0 +1,3 @@
+catkin_make
+. devel/setup.bash
+roslaunch warehouse_simulation warehouse_simulation.launch
