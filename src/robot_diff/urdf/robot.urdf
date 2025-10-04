@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!-- http://wiki.ros.org/urdf/XML/link -->
+<robot name="diff_robot">
+	<link name="body_link">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<geometry>
+				<box size="1 0.6 0.3"/>
+			</geometry>
+
+			<material name="red">
+				<color rgba="1 0 0 1"/>
+			</material>
+		</visual>
+	</link>
+
+	<joint name="wheel1_joint" type="continuous">
+		<parent link="body_link"/>
+		<child link="wheel1_link"/>
+		<origin xyz="-0.3 -0.35 -0.1" rpy="0 0 0"/>
+		<axis xyz="0 1 0"/>
+	</joint>
+	<link name="wheel1_link">
+		<visual>
+			<origin rpy="1.57095 0 0" xyz="0 0 0"/>
+			<geometry>
+				<cylinder length="0.1" radius="0.15"/>
+			</geometry>
+
+			<material name="yellow">
+				<color rgba="1 1 0 1"/>
+			</material>
+		</visual>
+	</link>
+
+	<joint name="wheel2_joint" type="continuous">
+		<parent link="body_link"/>
+		<child link="wheel2_link"/>
+		<origin xyz="-0.3 0.35 -0.1" rpy="0 0 0"/>
+		<axis xyz="0 1 0"/>
+	</joint>
+	<link name="wheel2_link">
+		<visual>
+			<origin rpy="1.57095 0 0" xyz="0 0 0"/>
+			<geometry>
+				<cylinder length="0.1" radius="0.15"/>
+			</geometry>	
+			<material name="yellow">
+				<color rgba="1 1 0 1"/>
+			</material>
+		</visual>
+	</link>
+
+	<joint name="caster_joint" type="continuous">
+		<parent link="body_link"/>
+		<child link="caster_link"/>
+		<origin xyz="0.4 0 -0.15" rpy="0 0 0"/>
+		<axis xyz="0 0 1"/>
+	</joint>
+	<link name="caster_link">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<geometry>
+				<sphere radius="0.05"/>
+			</geometry>
+			<material name="blue">
+				<color rgba="0 0 1 1"/>
+			</material>
+		</visual>
+	</link>
+
+</robot>

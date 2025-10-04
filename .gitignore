@@ -1,5 +1,5 @@
 build/
 devel/
 *.log
-obj_finder/
-robot_diff/
+# obj_finder/
+# robot_diff/

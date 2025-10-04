@@ -1,0 +1,22 @@
+<launch>
+  <param name="use_sim_time" value="true"/>
+
+  <arg name="map_file" default="$(find obj_finder)/maps/20250914_062544.yaml"/>
+  <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)" />
+
+  <node pkg="amcl" type="amcl" name="amcl" output="screen">
+    <param name="use_map_topic" value="true"/>
+    <param name="odom_frame_id" value="odom"/>
+    <param name="base_frame_id" value="base_footprint"/>
+    <param name="global_frame_id" value="map"/>
+  </node>
+
+  <node pkg="move_base" type="move_base" name="move_base" output="screen">
+    <rosparam file="$(find obj_finder)/config/costmap_common_params.yaml" command="load"/>
+    <rosparam file="$(find obj_finder)/config/global_costmap_params.yaml" command="load"/>
+    <rosparam file="$(find obj_finder)/config/local_costmap_params.yaml" command="load"/>
+    <rosparam file="$(find obj_finder)/config/base_local_planner_params.yaml" command="load"/>
+  </node>
+
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find obj_finder)/rviz/obj_finder.rviz"/>
+</launch>

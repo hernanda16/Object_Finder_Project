@@ -1,0 +1,16 @@
+obstacle_range: 5.0
+raytrace_range: 5.0
+
+footprint: [[0.28, 0.30], [0.28, -0.30], [-0.28, -0.30], [-0.28, 0.30]]
+
+inflation_radius: 0.6       # increase if robot is larger / to force safer margin
+cost_scaling_factor: 5.0    # higher -> cost rises rapidly near obstacles
+lethal_threshold: 254
+
+observation_sources: scan
+scan:
+  sensor_frame: base_scan
+  data_type: LaserScan
+  topic: scan
+  marking: true
+  clearing: true

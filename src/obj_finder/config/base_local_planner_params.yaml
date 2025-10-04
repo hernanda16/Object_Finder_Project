@@ -1,0 +1,33 @@
+TrajectoryPlannerROS:
+  # === Robot velocity constraints (Waffle Pi spec) ===
+  max_vel_x: 0.26
+  min_vel_x: 0.05
+  max_rotational_vel: 1.82
+  min_in_place_rotational_vel: 0.9
+  acc_lim_th: 3.2
+  acc_lim_x: 2.5
+  acc_lim_y: 2.5
+
+  holonomic_robot: false
+
+  # === Goal tolerances ===
+  yaw_goal_tolerance: 0.1         # ~6°
+  xy_goal_tolerance: 0.1          # 10 cm
+  latch_xy_goal_tolerance: false
+
+  # === Trajectory simulation parameters ===
+  sim_time: 2.5                   # 🔧 lebih panjang = path lebih smooth
+  vx_samples: 10                  # 🔧 lebih banyak sample linear
+  vtheta_samples: 40              # 🔧 lebih banyak sample angular
+  controller_frequency: 10.0
+
+  # === Biases (penting untuk shortcut issue) ===
+  path_distance_bias: 32.0        # 🔧 seberapa kuat ikuti global path (default 32.0)
+  goal_distance_bias: 20.0        # 🔧 seberapa kuat ke arah goal (default 20.0)
+  occdist_scale: 0.05             # 🔧 seberapa kuat hindari obstacle (default 0.01–0.05)
+  heading_lookahead: 0.325        # jarak untuk heading alignment
+  oscillation_reset_dist: 0.05
+
+  # === Forward point bias ===
+  heading_scoring: true
+  heading_scoring_timestep: 0.8

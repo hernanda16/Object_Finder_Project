@@ -1,0 +1,684 @@
+<sdf version='1.7'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <state world_name='default'>
+      <sim_time>1117 812000000</sim_time>
+      <real_time>2042 760565567</real_time>
+      <wall_time>1758277646 295004117</wall_time>
+      <iterations>1117812</iterations>
+      <model name='Amazon Pod'>
+        <pose>6.78879 9.88206 0.439767 -1.76765 -1.57079 1.785</pose>
+        <scale>1 1 1</scale>
+        <link name='pod_link'>
+          <pose>6.78879 9.88206 0.439767 -1.76765 -1.57079 1.785</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 1.7e-05 0.612845 0.922416 -0.615236 -0.002657</acceleration>
+          <wrench>3.5e-05 0.001282 46.7356 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Amazon Pod_clone'>
+        <pose>4.61321 9.89032 0.439767 -1.76771 -1.57079 1.78597</pose>
+        <scale>1 1 1</scale>
+        <link name='pod_link'>
+          <pose>4.61321 9.89032 0.439767 -1.76771 -1.57079 1.78597</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>1e-06 1.3e-05 -0.140903 0.436903 -1.10632 -0.002295</acceleration>
+          <wrench>5.3e-05 0.000986 -10.7452 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Amazon Pod_clone_0'>
+        <pose>6.80673 8.00363 0.439767 -1.76744 -1.57079 1.78446</pose>
+        <scale>1 1 1</scale>
+        <link name='pod_link'>
+          <pose>6.80673 8.00363 0.439767 -1.76744 -1.57079 1.78446</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-2e-06 2.2e-05 -0.370215 2.20167 -1.17211 -0.00222</acceleration>
+          <wrench>-0.000119 0.001674 -28.2326 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Amazon Pod_clone_1'>
+        <pose>4.61112 7.92169 0.439767 -1.76743 -1.57079 1.78477</pose>
+        <scale>1 1 1</scale>
+        <link name='pod_link'>
+          <pose>4.61112 7.92169 0.439767 -1.76743 -1.57079 1.78477</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-2e-06 2e-05 -0.923284 0.172612 -1.51302 -0.001958</acceleration>
+          <wrench>-0.000176 0.001533 -70.4097 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Amazon Pod_clone_2'>
+        <pose>6.83462 6.07235 0.439767 -1.76741 -1.57079 1.78477</pose>
+        <scale>1 1 1</scale>
+        <link name='pod_link'>
+          <pose>6.83462 6.07235 0.439767 -1.76741 -1.57079 1.78477</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-3e-06 1.6e-05 -1.87722 -1.91569 -1.07097 3.14009</acceleration>
+          <wrench>-0.000198 0.001189 -143.157 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Amazon Pod_clone_3'>
+        <pose>4.59646 5.98227 0.439767 -1.76744 -1.57079 1.78447</pose>
+        <scale>1 1 1</scale>
+        <link name='pod_link'>
+          <pose>4.59646 5.98227 0.439767 -1.76744 -1.57079 1.78447</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-2e-06 2.2e-05 -0.367229 2.17886 -1.17131 -0.002223</acceleration>
+          <wrench>-0.000127 0.001716 -28.0049 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Amazon Pod_clone_4'>
+        <pose>6.82817 4.07573 0.439767 1.76813 -1.57079 -1.76497</pose>
+        <scale>1 1 1</scale>
+        <link name='pod_link'>
+          <pose>6.82817 4.07573 0.439767 1.76813 -1.57079 -1.76497</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>3e-06 -1.9e-05 1.62852 0.670664 1.36197 0.002715</acceleration>
+          <wrench>0.000202 -0.001413 124.191 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Amazon Pod_clone_5'>
+        <pose>4.60964 4.00654 0.439767 -1.76758 -1.57079 1.74288</pose>
+        <scale>1 1 1</scale>
+        <link name='pod_link'>
+          <pose>4.60964 4.00654 0.439767 -1.76758 -1.57079 1.74288</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 1.1e-05 -1.02472 0.927635 0.502489 -0.002066</acceleration>
+          <wrench>4e-06 0.000818 -78.1448 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <model name='Amazon Pod'>
+      <link name='pod_link'>
+        <inertial>
+          <pose>0 0 1.2045 0 -0 0</pose>
+          <mass>76.26</mass>
+          <inertia>
+            <ixx>47</ixx>
+            <ixy>-0.003456</ixy>
+            <ixz>0.001474</ixz>
+            <izz>13.075</izz>
+            <iyz>-0.014439</iyz>
+            <iyy>47</iyy>
+          </inertia>
+        </inertial>
+        <visual name='pod_visual'>
+          <pose>0 0 0 1.5707 -0 0</pose>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+          <geometry>
+            <mesh>
+              <uri>model://kiva_pod/meshes/pod_lowres.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='pod_collision'>
+          <pose>0 0 0 1.5707 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://kiva_pod/meshes/pod_lowres.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>1</slip1>
+                <slip2>1</slip2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>6.38699 9.87707 0 0 -0 0</pose>
+    </model>
+    <model name='Amazon Pod_clone'>
+      <link name='pod_link'>
+        <inertial>
+          <pose>0 0 1.2045 0 -0 0</pose>
+          <mass>76.26</mass>
+          <inertia>
+            <ixx>47</ixx>
+            <ixy>-0.003456</ixy>
+            <ixz>0.001474</ixz>
+            <izz>13.075</izz>
+            <iyz>-0.014439</iyz>
+            <iyy>47</iyy>
+          </inertia>
+        </inertial>
+        <visual name='pod_visual'>
+          <pose>0 0 0 1.5707 -0 0</pose>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+          <geometry>
+            <mesh>
+              <uri>model://kiva_pod/meshes/pod_lowres.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='pod_collision'>
+          <pose>0 0 0 1.5707 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://kiva_pod/meshes/pod_lowres.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>1</slip1>
+                <slip2>1</slip2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>6.39595 13.4324 0.124317 9.8e-05 -0 -0.012719</pose>
+    </model>
+    <model name='Amazon Pod_clone_0'>
+      <link name='pod_link'>
+        <inertial>
+          <pose>0 0 1.2045 0 -0 0</pose>
+          <mass>76.26</mass>
+          <inertia>
+            <ixx>47</ixx>
+            <ixy>-0.003456</ixy>
+            <ixz>0.001474</ixz>
+            <izz>13.075</izz>
+            <iyz>-0.014439</iyz>
+            <iyy>47</iyy>
+          </inertia>
+        </inertial>
+        <visual name='pod_visual'>
+          <pose>0 0 0 1.5707 -0 0</pose>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+          <geometry>
+            <mesh>
+              <uri>model://kiva_pod/meshes/pod_lowres.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='pod_collision'>
+          <pose>0 0 0 1.5707 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://kiva_pod/meshes/pod_lowres.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>1</slip1>
+                <slip2>1</slip2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>6.80674 8.00369 0.564073 -0.693405 -1.57079 0.710438</pose>
+    </model>
+    <model name='Amazon Pod_clone_1'>
+      <link name='pod_link'>
+        <inertial>
+          <pose>0 0 1.2045 0 -0 0</pose>
+          <mass>76.26</mass>
+          <inertia>
+            <ixx>47</ixx>
+            <ixy>-0.003456</ixy>
+            <ixz>0.001474</ixz>
+            <izz>13.075</izz>
+            <iyz>-0.014439</iyz>
+            <iyy>47</iyy>
+          </inertia>
+        </inertial>
+        <visual name='pod_visual'>
+          <pose>0 0 0 1.5707 -0 0</pose>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+          <geometry>
+            <mesh>
+              <uri>model://kiva_pod/meshes/pod_lowres.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='pod_collision'>
+          <pose>0 0 0 1.5707 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://kiva_pod/meshes/pod_lowres.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>1</slip1>
+                <slip2>1</slip2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>4.6274 7.90494 0.564081 0.680087 -1.57079 -0.663053</pose>
+    </model>
+    <model name='Amazon Pod_clone_2'>
+      <link name='pod_link'>
+        <inertial>
+          <pose>0 0 1.2045 0 -0 0</pose>
+          <mass>76.26</mass>
+          <inertia>
+            <ixx>47</ixx>
+            <ixy>-0.003456</ixy>
+            <ixz>0.001474</ixz>
+            <izz>13.075</izz>
+            <iyz>-0.014439</iyz>
+            <iyy>47</iyy>
+          </inertia>
+        </inertial>
+        <visual name='pod_visual'>
+          <pose>0 0 0 1.5707 -0 0</pose>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+          <geometry>
+            <mesh>
+              <uri>model://kiva_pod/meshes/pod_lowres.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='pod_collision'>
+          <pose>0 0 0 1.5707 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://kiva_pod/meshes/pod_lowres.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>1</slip1>
+                <slip2>1</slip2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>6.83463 6.07201 0.564085 -1.56228 -1.57079 1.57931</pose>
+    </model>
+    <model name='Amazon Pod_clone_3'>
+      <link name='pod_link'>
+        <inertial>
+          <pose>0 0 1.2045 0 -0 0</pose>
+          <mass>76.26</mass>
+          <inertia>
+            <ixx>47</ixx>
+            <ixy>-0.003456</ixy>
+            <ixz>0.001474</ixz>
+            <izz>13.075</izz>
+            <iyz>-0.014439</iyz>
+            <iyy>47</iyy>
+          </inertia>
+        </inertial>
+        <visual name='pod_visual'>
+          <pose>0 0 0 1.5707 -0 0</pose>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+          <geometry>
+            <mesh>
+              <uri>model://kiva_pod/meshes/pod_lowres.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='pod_collision'>
+          <pose>0 0 0 1.5707 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://kiva_pod/meshes/pod_lowres.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>1</slip1>
+                <slip2>1</slip2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>4.59646 5.98229 0.564081 0.575499 -1.57079 -0.558465</pose>
+    </model>
+    <model name='Amazon Pod_clone_4'>
+      <link name='pod_link'>
+        <inertial>
+          <pose>0 0 1.2045 0 -0 0</pose>
+          <mass>76.26</mass>
+          <inertia>
+            <ixx>47</ixx>
+            <ixy>-0.003456</ixy>
+            <ixz>0.001474</ixz>
+            <izz>13.075</izz>
+            <iyz>-0.014439</iyz>
+            <iyy>47</iyy>
+          </inertia>
+        </inertial>
+        <visual name='pod_visual'>
+          <pose>0 0 0 1.5707 -0 0</pose>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+          <geometry>
+            <mesh>
+              <uri>model://kiva_pod/meshes/pod_lowres.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='pod_collision'>
+          <pose>0 0 0 1.5707 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://kiva_pod/meshes/pod_lowres.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>1</slip1>
+                <slip2>1</slip2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>6.84681 4.10749 0.564071 -0.910916 -1.57078 0.92795</pose>
+    </model>
+    <model name='Amazon Pod_clone_5'>
+      <link name='pod_link'>
+        <inertial>
+          <pose>0 0 1.2045 0 -0 0</pose>
+          <mass>76.26</mass>
+          <inertia>
+            <ixx>47</ixx>
+            <ixy>-0.003456</ixy>
+            <ixz>0.001474</ixz>
+            <izz>13.075</izz>
+            <iyz>-0.014439</iyz>
+            <iyy>47</iyy>
+          </inertia>
+        </inertial>
+        <visual name='pod_visual'>
+          <pose>0 0 0 1.5707 -0 0</pose>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+          <geometry>
+            <mesh>
+              <uri>model://kiva_pod/meshes/pod_lowres.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='pod_collision'>
+          <pose>0 0 0 1.5707 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://kiva_pod/meshes/pod_lowres.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>1</slip1>
+                <slip2>1</slip2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>4.60263 4.05293 0.564085 -1.56228 -1.57079 1.57931</pose>
+    </model>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-1.08227 -1.14951 8.08594 0 0.641796 0.848198</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>
