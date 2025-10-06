@@ -1,3 +1,4 @@
 <launch>
-  <node pkg="robot_diff" type="ui_server.py" name="ui_server.py" output="screen"/>
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+  <node pkg="robot_diff" type="ui_server.py" name="ui_server" output="screen"/>
 </launch>

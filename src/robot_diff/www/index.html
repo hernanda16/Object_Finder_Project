@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Object Finder</title>
+    <script src="./roslib.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Object Finder — UI</h1>
+            <div class="topbar small">
+                Server status: <span id="status">unknown</span>
+                <div style="margin-left:auto">
+                    <button id="reloadBtn" class="ghost">Reload</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="card">
+            <div class="object-finder-grid" style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start">
+
+                <!-- Main object selector -->
+                <div style="flex:1;min-width:260px">
+                    <label for="objectSelect" class="small">Pilih objek yang ingin dicari</label>
+                    <div class="controls" style="margin-top:6px">
+                        <select id="objectSelect" style="flex:1">
+                            <option value="">-- pilih barang --</option>
+                            <option value="thermos">Termos</option>
+                            <option value="glass">Gelas</option>
+                            <option value="key">Kunci</option>
+                            <option value="bag">Tas</option>
+                            <option value="lunchbox">Tempat Makan</option>
+                            <option value="laptop">Laptop</option>
+                            <option value="toolbox">Tool Box</option>
+                            <option value="hammer">Palu</option>
+                            <option value="screwdriver">Obeng</option>
+                            <option value="saw">Gergaji</option>
+                            <option value="firstaidkit">Kotak P3K</option>
+                            <option value="glasses">Kacamata</option>
+                        </select>
+                        <button id="nextBtn" class="primary" style="margin-left:8px">Lanjut</button>
+                    </div>
+                </div>
+
+                <!-- Recommendations column -->
+                <div style="min-width:220px">
+                    <label for="recInput" class="small">Rekomendasi (berdasarkan kebiasaan)</label>
+                    <div style="margin-top:6px; display:flex; gap:8px; align-items:center">
+                        <input id="recInput" type="text" placeholder="" style="flex:1" />
+                        <button id="findRecBtn" class="ghost">Cari Rekomendasi</button>
+                        <button id="findBtn" class="ghost">Cari Objek</button>
+                    </div>
+                </div>
+
+                <!-- Result column -->
+                <div style="width:100%">
+                    <label class="small">Hasil</label>
+                    <div id="resultBox">
+                        <div id="resultText">(belum dicari)</div>
+                        <div style="display:flex;gap:8px;align-items:center">
+                            <div id="resultBadge" class="badge">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
