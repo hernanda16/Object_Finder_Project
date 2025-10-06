@@ -6,4 +6,24 @@
     <xacro:include filename="lidar.xacro" />
     <xacro:include filename="camera.xacro" />
 
+    <xacro:add_camera
+        name="camera1"
+        parent_link="chassis"
+        xyz="0.305 0 1.08"
+        rpy="0 0.174533 0"
+        fov="1.089"
+        width="640"
+        height="480"
+        frame_prefix="camera1"/>
+
+    <xacro:add_camera
+        name="camera2"
+        parent_link="chassis"
+        xyz="0.305 0 0.58"
+        rpy="0 0.174533 0"
+        fov="1.089"
+        width="640"
+        height="480"
+        frame_prefix="camera2"/>
+
 </robot>

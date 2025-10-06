@@ -6,9 +6,11 @@
   </node>
 
 	<!-- <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/> -->
-  <include file="$(find gazebo_ros)/launch/empty_world.launch" />
-  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model robot" />
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+        args="-param robot_description -urdf -model robot -x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0" />
+  <node name="gazebo" pkg="gazebo_ros" type="gazebo" args="-world $(find robot_diff)/worlds/house.world" />
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_diff)/rsp.rviz" required="true"/>
-
+  <!-- <include file="$(find robot_diff)/launch/gmapping.launch"/> -->
+  <include file="$(find robot_diff)/launch/mapping.launch"/>
 </launch>

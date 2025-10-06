@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   joint_state_publisher_gui
   roscpp
+  rospy
   rviz
   tf2
   urdf
